@@ -12,7 +12,7 @@
         margin-top: 35px;
       }
       &__members {
-        @include flexbox;
+        display: flexbox;
         color: #999;
         font-size: 12px;
         margin-top: 15px;
@@ -67,7 +67,6 @@
       }
     }
   }
-
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
