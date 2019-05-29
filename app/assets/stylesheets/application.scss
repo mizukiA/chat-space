@@ -9,7 +9,8 @@
 @import "mixins/vendor_prefix";
 @import "modules/chat-side";
 @import "modules/chat-main";
-@import "modules/user";
 @import "messages/messages.scss";
+
 @import "modules/flash";
 @import "modules/group";
+@import "modules/user";
