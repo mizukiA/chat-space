@@ -38,30 +38,30 @@ $(function(){
        $('.messages').append(html);
        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
        $('form')[0].reset();
-    })
+     })
     .fail(function(){
       alert('error');
-  });
+     });
   return false;
  });
   var reloadMessages = function() {
     last_message_id = $('.message:last').data('id');
-    $.ajax({
+   $.ajax({
       url: 'api/messages',
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
-    })
+   })
      .done(function(messages) {
        messages.forEach(function(message){
        var insertHTML = buildHTML(message)
        $('.messages').append(insertHTML);
        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      })
-      })
+       })
+     })
      .fail(function() {
       alert('error');
-       })
-     };
+     })
+  };
      setInterval(reloadMessages, 5000)
- });
+});
