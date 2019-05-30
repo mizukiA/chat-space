@@ -21,30 +21,9 @@ $(function(){
        </div>`
      return html;
     }
-//   var buildMessageHTML = function(message) {
-//     var html = 
-//         `<div class="message" data-id=${message.id}>
-//            <div class="upper-message">
-//              <div class="upper-message__user-name">
-//              ${message.user_name}
-//              </div>
-//              <div class="upper-message__date">
-//              ${message.created_at}
-//              </div>
-//          </div>
-//            <div class="lower-message">
-//              <p class="lower-message__content">
-//              ${message.content}
-//              </p>
-//              ${Image(image_url)}
-//            </div>
-//           </div>`
-//      return html;
-// };
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-// var input = $('.form__message').val()
     var url = $(this).attr('action')
    $.ajax({
      url: url,
@@ -78,7 +57,6 @@ $(function(){
        var insertHTML = buildHTML(message)
        $('.messages').append(insertHTML);
        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      //  $('.messages')[0].reset();
       })
       })
      .fail(function() {

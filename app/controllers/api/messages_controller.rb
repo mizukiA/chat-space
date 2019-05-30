@@ -8,9 +8,3 @@ class Api::MessagesController < ApplicationController
     end
   end
 end
-# private
-#   def new_messages_params
-#     params.require(:message).permit(:content, :image, :id).merge(user_id: user.id)
-#   end
-
-# {new_messages_params}
