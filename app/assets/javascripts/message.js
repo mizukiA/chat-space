@@ -1,6 +1,6 @@
 $(function(){
  function buildHTML(message){
-  var image = (message.image)?'<img class="lower-message__image" src="${message.image_url}">':"";
+  var image = (message.image.url !== null )? `<img class="lower-message__image" src="${message.image.url}">`: "";
   var html =
       `<div class="message" data-id=${message.id}>
          <div class="upper-message">
@@ -78,7 +78,8 @@ $(function(){
        messages.forEach(function(message){
        var insertHTML = buildHTML(message)
        $('.messages').append(insertHTML);
-       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
+       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      //  $('.messages')[0].reset();
      console.log('success');
       })
       })
