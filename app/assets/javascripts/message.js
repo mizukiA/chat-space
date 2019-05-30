@@ -44,8 +44,7 @@ $(function(){
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(this)
-    // var input = $('.form__message').val()
+// var input = $('.form__message').val()
     var url = $(this).attr('action')
    $.ajax({
      url: url,
@@ -80,12 +79,10 @@ $(function(){
        $('.messages').append(insertHTML);
        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       //  $('.messages')[0].reset();
-     console.log('success');
       })
       })
      .fail(function() {
       alert('error');
-    console.log('error');
        })
      };
      setInterval(reloadMessages, 5000)
